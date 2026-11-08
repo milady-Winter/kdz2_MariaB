@@ -15,7 +15,7 @@ namespace ratexpr {
     class Const : public Expression {
         Fraction val;
     public:
-        explicit Const(const Fraction &value);
+        explicit Const(const Fraction& value);
         Fraction evaluate() const override;
         void print(std::ostream& os) const override;
     };
@@ -31,7 +31,7 @@ namespace ratexpr {
     protected:
         std::unique_ptr<Expression> l, r;
     public:
-        BinaryExpression(std::unique_ptr<Expression> Ihs,
+        BinaryExpression(std::unique_ptr<Expression> lhs,
                          std::unique_ptr<Expression> rhs);
     };
     class Add : public BinaryExpression {
