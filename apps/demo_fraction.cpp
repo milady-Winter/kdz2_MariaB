@@ -9,20 +9,31 @@ void cnt(int u){
     std::cout << h - a << " " << a - h << '\n';
     std::cout << h / a << " " << a / h << '\n';
     Fraction acc;
-    acc += 1/2;
-    acc += 1/3;
+    acc += Fraction(1, 2);
+    acc += Fraction(1, 3);
     acc *= 6u;
     std::cout<<"acc = " << acc << '\n';
 }
-void mis(int u){
-    std::cout<<Fraction(1,0) << '\n';
-    std::cout<<Fraction(1,2) / (0*u);
+void mis1(){
+    try {
+        std::cout << Fraction(1, 0) << '\n';
+    } catch (const std::invalid_argument& err) {
+        std::cout<<"Invalid argument:" << err.what()<<'\n';
+    }
+}
+void mis2(int u){
+    try {
+        std::cout << Fraction(1, 2) / (0 * u);
+    } catch (const std::invalid_argument& err) {
+        std::cout << "Invalid argument:" << err.what() << '\n';
+    }
 }
 int main() {
     std::cout << Fraction(6, -8) << " " << Fraction(10, 4) << '\n';
-    std::cout << Fraction(1, 2) + Fraction(1, 3) << " "  << Fraction(1, 2) - Fraction(1, 3) << " " << Fraction(1,2) * Fraction(1,3) << " " << Fraction(1,2) / Fraction(1,3) << '/n';
+    std::cout << Fraction(1, 2) + Fraction(1, 3) << " "  << Fraction(1, 2) - Fraction(1, 3) << " " << Fraction(1,2) * Fraction(1,3) << " " << Fraction(1,2) / Fraction(1,3) << '\n';
     int u;
     std::cin>>u;
     cnt(u);
-    mis(u);
+    mis1();
+    mis2(u);
 }

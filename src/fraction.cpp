@@ -30,7 +30,7 @@ namespace ratexpr {
         den = 1;
     }
 
-    Fraction::Fraction(std::int64_t numerator, std::int64_t denominator = 1) {
+    Fraction::Fraction(std::int64_t numerator, std::int64_t denominator) {
         if (denominator == 0) {
             throw std::invalid_argument("zero denominator");
         }

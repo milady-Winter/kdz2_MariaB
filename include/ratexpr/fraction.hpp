@@ -7,9 +7,9 @@ namespace ratexpr
     class Fraction
     {
         std::int64_t num, den;
-        std::int64_t nok(std::int64_t a, std::int64_t b) {};
-        std::int64_t nod(std::int64_t a, std::int64_t b) {};
-        void cut() {};
+        std::int64_t nok(std::int64_t a, std::int64_t b);
+        std::int64_t nod(std::int64_t a, std::int64_t b);
+        void cut();
       public:
         Fraction();
         Fraction(std::int64_t numerator, std::int64_t denominator = 1);
